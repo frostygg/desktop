@@ -45,8 +45,8 @@ function createWindow () {
   });
 
   mainWindow.setMenu(null);
-  mainWindow.loadURL('http://play.cpback.club/desktop_game.html');
   clearCache();
+  mainWindow.loadURL('http://play.cpback.club/desktop_game.html');
 
   //mainWindow.webContents.openDevTools();
 
@@ -69,7 +69,7 @@ app.on('activate', function () {
   if (mainWindow === null) createWindow();
 });
 
-//setInterval(clearCache, 1000*60*5);
+setInterval(clearCache, 1000*60*5);
 //if (isDev === false) {
  // setInterval(() => {
  //   autoUpdater.checkForUpdates()
