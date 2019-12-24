@@ -2,7 +2,8 @@ const isDev = require('electron-is-dev');
 if (isDev) { 
   const {app, BrowserWindow} = require('electron');
 } else {
-  const {app, autoUpdater, BrowserWindow} = require('electron');
+  const {app, autoUpdater} = require('electron');
+  const {BrowserWindow} = require('electron');
   const server = "https://hazel-pi-flame.now.sh/";
   const feed = `${server}/update/${process.platform}/${app.getVersion()}`;
   autoUpdater.setFeedURL(feed);
