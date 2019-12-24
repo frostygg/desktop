@@ -1,6 +1,6 @@
 {
   "name": "backdesktop",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.4",
   "description": "Desktop client for cpback.club",
   "main": "main.js",
   "scripts": {
