@@ -1,0 +1,15 @@
+{
+  "name": "backdesktop",
+  "version": "1.0.0-alpha.1",
+  "description": "Desktop client for cpback.club",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "daniel11420/The Club Penguin Back Development Team",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^6.1.2"
+  },
+  "dependencies": {}
+}

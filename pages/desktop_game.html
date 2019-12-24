@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="Content-Language" content="en"/>
+    <title>Club Penguin Back Desktop | Club Penguin Back is an educational instance. We do not hold copyright for any of the files.</title>
+
+    <link href="/css/baseline.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="/css/affiliate/affiliate.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link id="stylesheet" type="text/css" href="/css/affiliate/0.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="/scripts/cookies.js"></script>
+    <script type="text/javascript" src="/scripts/0.js"></script>
+
+    <script type="text/javascript">
+      function loadCP() {
+          var game = document.querySelector("#game");
+          var worlds = new Object();
+          worlds[100] = { id: 100, name: "Blizzard", ip: "192.99.55.190", is_safe: false, port: 9875 };
+          game.startup("192.99.55.190", 6112, "http://media.cpback.club/", "en", worlds);
+      }
+    </script>
+	<style type="text/css">
+  .grecaptcha-badge {
+  display: none;
+  }
+</style>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script type="text/javascript">
+  function onSubmit() {
+    document.getElementById("game").finishedCaptcha(grecaptcha.getResponse());
+    grecaptcha.reset()
+  }
+</script>
+<form>
+  <div id='recaptcha' class="g-recaptcha"
+    data-sitekey="6LefscgUAAAAAJLWhgZhnSDYm9enZW3sYt8tvS4w"
+    data-callback="onSubmit"
+    data-size="invisible"></div>
+</form>
+
+  </head>
+  <body>
+    <object type="application/x-shockwave-flash" id="game" name="game" data="http://media.cpback.club/boots.swf"
+      width="100%" 
+      height="98%">
+      <param name="menu" value="false">
+      <param name="allowScriptAccess" value="always">
+      <a href="https://get.adobe.com/flashplayer/">
+        <img id="noflash" src="/images/need-flash-player.gif" alt="Get Adobe Flash player" title="Get Adobe Flash player" />
+      </a>
+    </object>
+  </body>
+</html>
