@@ -1,5 +1,16 @@
+const isDev = require('electron-is-dev');
+if (isDev) { 
+  const {app, BrowserWindow} = require('electron');
+} else {
+  const {app, autoUpdater, BrowserWindow} = require('electron');
+  const server = "https://hazel-pi-flame.now.sh/";
+  const feed = `${server}/update/${process.platform}/${app.getVersion()}`;
+  autoUpdater.setFeedURL(feed);
+}
+
 const {app, BrowserWindow} = require('electron');
 const path = require('path');
+const isDev = require('electron-is-dev');
 
 let pluginName
 switch (process.platform) {
@@ -61,3 +72,8 @@ app.on('activate', function () {
 });
 
 setInterval(clearCache, 1000*60*5);
+if (isDev === false) {
+  setInterval(() => {
+    autoUpdater.checkForUpdates()
+  }, 60000);
+}
