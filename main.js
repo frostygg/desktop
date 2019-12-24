@@ -8,7 +8,7 @@ if (isDev) {
   autoUpdater.setFeedURL(feed);
 }
 
-const {app, BrowserWindow} = require('electron');
+//const {app, BrowserWindow} = require('electron');
 const path = require('path');
 
 let pluginName
@@ -70,9 +70,9 @@ app.on('activate', function () {
   if (mainWindow === null) createWindow();
 });
 
-setInterval(clearCache, 1000*60*5);
-if (isDev === false) {
-  setInterval(() => {
-    autoUpdater.checkForUpdates()
-  }, 60000);
-}
+//setInterval(clearCache, 1000*60*5);
+//if (isDev === false) {
+ // setInterval(() => {
+ //   autoUpdater.checkForUpdates()
+ // }, 60000);
+//}
