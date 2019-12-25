@@ -1,7 +1,7 @@
 {
   "name": "backdesktop",
   "version": "1.0.0-alpha.5",
-  "description": "Desktop client for cpback.club",
+  "description": "Desktop client for play.cpback.club",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
