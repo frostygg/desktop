@@ -1,11 +1,16 @@
 {
   "name": "backdesktop",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "description": "Desktop client for cpback.club",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
+  "bugs": {
+    "url": "https://github.com/cpback/desktop/issues"
+  },
+  "homepage": "https://github.com/cpback/desktop#readme",
+  "repository": "https://github.com/cpback/desktop",
   "author": "daniel11420/The Club Penguin Back Development Team",
   "license": "CC0-1.0",
   "devDependencies": {

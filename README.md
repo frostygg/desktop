@@ -1,7 +1,7 @@
 # Club Penguin Back / Desktop
 This is a work in progress Desktop client for Club Penguin Back
 
-# Tester instructions
+# Tester/End User instructions
 Go to the [releases page](https://github.com/cpback/desktop/releases) and download the latest one to test. Unpack and run `Club Penguin Back Desktop.exe`
 
 # Development instructions
