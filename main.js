@@ -5,6 +5,25 @@ if (isDev) { } else {
   const server = "https://hazel-pi-flame.now.sh/";
   const feed = `${server}/update/${process.platform}/${app.getVersion()}`;
   autoUpdater.setFeedURL(feed);
+
+  autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
+    const dialogOpts = {
+      type: 'info',
+      buttons: ['Restart', 'Later'],
+      title: 'Application Update',
+      message: process.platform === 'win32' ? releaseNotes : releaseName,
+      detail: 'A new version has been downloaded. Restart the application to apply the updates.'
+    }
+  
+    dialog.showMessageBox(dialogOpts).then((returnValue) => {
+      if (returnValue.response === 0) autoUpdater.quitAndInstall();
+    });
+  });
+
+  autoUpdater.on('error', message => {
+    console.error('There was a problem updating the application');
+    console.error(message);
+  });
 }
 
 //const {app, BrowserWindow} = require('electron');
@@ -68,28 +87,6 @@ app.on('activate', function () {
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) createWindow();
 });
-
-if (isDev) { } else {
-  autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
-    const dialogOpts = {
-      type: 'info',
-      buttons: ['Restart', 'Later'],
-      title: 'Application Update',
-      message: process.platform === 'win32' ? releaseNotes : releaseName,
-      detail: 'A new version has been downloaded. Restart the application to apply the updates.'
-    }
-  
-    dialog.showMessageBox(dialogOpts).then((returnValue) => {
-      if (returnValue.response === 0) autoUpdater.quitAndInstall();
-    });
-  });
-
-  autoUpdater.on('error', message => {
-    console.error('There was a problem updating the application');
-    console.error(message);
-  });
-}
-
 
 
 setInterval(clearCache, 1000*60*5);
