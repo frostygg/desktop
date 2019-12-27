@@ -65,7 +65,7 @@ function createWindow () {
 
   mainWindow.setMenu(null);
   clearCache();
-  mainWindow.loadURL('http://play.cpback.club/desktop_game.html');
+  mainWindow.loadURL('http://play.cpback.net/desktop_game.html');
 
   //mainWindow.webContents.openDevTools();
 
