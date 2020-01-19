@@ -4,20 +4,27 @@
   "description": "Desktop client for cpback.net",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-builder build --win"
   },
   "bugs": {
     "url": "https://github.com/cpback/desktop/issues"
   },
   "homepage": "https://github.com/cpback/desktop#readme",
   "repository": "https://github.com/cpback/desktop",
-  "author": "daniel11420/The Club Penguin Back Development Team",
+  "author": "daniel11420/The CPBack Development Team",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^6.1.2",
+    "electron-builder": "^22.2.0",
     "electron-is-dev": "^1.1.0"
   },
   "dependencies": {
     "electron-is-dev": "^1.1.0"
+  },
+  "build":  {
+    "appId": "com.cpback.desktop",
+    "productName": "CPBack Desktop",
+    "asar": "false"
   }
 }

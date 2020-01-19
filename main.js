@@ -1,30 +1,5 @@
 const {app, BrowserWindow, dialog} = require('electron');
 const isDev = require('electron-is-dev');
-if (isDev) { } else {
-  const {autoUpdater} = require('electron');
-  const server = "https://hazel-pi-flame.now.sh/";
-  const feed = `${server}/update/${process.platform}/${app.getVersion()}`;
-  autoUpdater.setFeedURL(feed);
-
-  autoUpdater.on('update-downloaded', (event, releaseNotes, releaseName) => {
-    const dialogOpts = {
-      type: 'info',
-      buttons: ['Restart', 'Later'],
-      title: 'Application Update',
-      message: process.platform === 'win32' ? releaseNotes : releaseName,
-      detail: 'A new version has been downloaded. Restart the application to apply the updates.'
-    }
-  
-    dialog.showMessageBox(dialogOpts).then((returnValue) => {
-      if (returnValue.response === 0) autoUpdater.quitAndInstall();
-    });
-  });
-
-  autoUpdater.on('error', message => {
-    console.error('There was a problem updating the application');
-    console.error(message);
-  });
-}
 
 //const {app, BrowserWindow} = require('electron');
 const path = require('path');
@@ -55,7 +30,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 1280,
     height: 720,
-    title: "Club Penguin Back is loading...",
+    title: "CPBack is loading...",
     icon: __dirname + '/favicon.ico',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
@@ -90,8 +65,3 @@ app.on('activate', function () {
 
 
 setInterval(clearCache, 1000*60*5);
-//if (isDev === false) {
- // setInterval(() => {
- //   autoUpdater.checkForUpdates()
- // }, 60000);
-//}
