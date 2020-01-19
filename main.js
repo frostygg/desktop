@@ -1,5 +1,7 @@
 const {app, BrowserWindow, dialog} = require('electron');
 const isDev = require('electron-is-dev');
+const { autoUpdater } = require("electron-updater");
+const DiscordRPC = require('discord-rpc');
 
 //const {app, BrowserWindow} = require('electron');
 const path = require('path');
@@ -20,6 +22,7 @@ app.commandLine.appendSwitch('ppapi-flash-path', path.join(__dirname, pluginName
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
+autoUpdater.checkForUpdatesAndNotify();
 let mainWindow;
 
 function clearCache() {
@@ -41,6 +44,21 @@ function createWindow () {
   mainWindow.setMenu(null);
   clearCache();
   mainWindow.loadURL('http://play.cpback.net/desktop_game.html');
+
+  // RICH PRESENCE START
+  const clientId = '668459813264424961'; DiscordRPC.register(clientId); const rpc = new DiscordRPC.Client({ transport: 'ipc' }); const startTimestamp = new Date();
+  rpc.on('ready', () => {
+    rpc.setActivity({
+      details: `cpback.net`, 
+      state: `Desktop Client`, 
+      startTimestamp, 
+      largeImageKey: `favicon_512`//, 
+      //largeImageText: "LARGE IMAGE TEXT", 
+      //smallImageKey: "favicon_512", 
+      //smallImageText: "SMALL IMAGE TEXT"
+    });
+  });
+  rpc.login({ clientId }).catch(console.error);
 
   //mainWindow.webContents.openDevTools();
 

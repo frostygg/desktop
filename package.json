@@ -1,6 +1,6 @@
 {
   "name": "backdesktop",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.8",
   "description": "Desktop client for cpback.net",
   "main": "main.js",
   "scripts": {
@@ -20,11 +20,14 @@
     "electron-is-dev": "^1.1.0"
   },
   "dependencies": {
-    "electron-is-dev": "^1.1.0"
+    "discord-rpc": "^3.1.0",
+    "electron-is-dev": "^1.1.0",
+    "electron-updater": "^4.2.0"
   },
-  "build":  {
+  "build": {
     "appId": "com.cpback.desktop",
     "productName": "CPBack Desktop",
-    "asar": "false"
+    "asar": "false",
+    "publish": "github"
   }
 }
