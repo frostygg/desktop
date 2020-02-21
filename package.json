@@ -1,11 +1,12 @@
 {
   "name": "backdesktop",
-  "version": "1.0.0-alpha.8",
+  "version": "1.0.0-alpha.10",
   "description": "Desktop client for cpback.net",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder build --win --publish never"
+    "build": "electron-builder build --win --publish never",
+    "appveyor-build": "electron-builder build --win --publish onTagOrDraft"
   },
   "bugs": {
     "url": "https://github.com/cpback/desktop/issues"
@@ -27,6 +28,8 @@
   "build": {
     "appId": "com.cpback.desktop",
     "productName": "CPBack Desktop",
-    "asar": "false"
+    "asar": "false",
+    "publish": "github",
+    "publishAutoUpdate": true
   }
 }
