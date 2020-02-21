@@ -27,6 +27,7 @@
   "build": {
     "appId": "com.cpback.desktop",
     "productName": "CPBack Desktop",
-    "asar": "false"
+    "asar": "false",
+    "publish": "never"
   }
 }
