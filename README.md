@@ -9,10 +9,17 @@ Go to the [releases page](https://github.com/cpback/desktop/releases) and downlo
 
 ## notes
 hi, i've quit
+
 heres all u need to know:
+
 appveyor builds dont have flash for some reason
+
 same with linux builds
+
 build windows with npm run-script build
+
 build mac with npm run-script build-mac
+
 thats all
+
 bye
