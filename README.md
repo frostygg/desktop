@@ -8,10 +8,6 @@ run the exe from releases
 `git clone` the repo into a folder, navigate into it and run `npm install`. To run the client, run `npm start`. (this requires nodejs and NPM)
 
 ## notes
-hi, i've quit
-
-heres all u need to know:
-
 appveyor builds dont have flash for some reason
 
 same with linux builds
@@ -19,7 +15,3 @@ same with linux builds
 build windows with npm run-script build
 
 build mac with npm run-script build-mac
-
-thats all
-
-bye
