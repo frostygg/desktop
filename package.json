@@ -17,7 +17,7 @@
   "author": "daniel11420/The CPBack Development Team",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^6.1.2",
+    "electron": "^8.1.1",
     "electron-builder": "^22.2.0",
     "electron-is-dev": "^1.1.0"
   },
