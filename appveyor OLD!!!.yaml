@@ -1,0 +1,58 @@
+version: 1.0.0-alpha.10.{build}
+max_jobs: 1
+environment:
+  GH_TOKEN:
+    secure: frick off ur not getting my token LOL
+  WEBHOOK_URL:
+    secure: frick off ur not getting my webhook url LOL
+build_script:
+- cmd: >-
+    npm i
+
+    npm run-script appveyor-build
+artifacts:
+- path: dist\*.exe
+  name: CPBack Desktop Windows
+deploy: off
+notifications:
+- provider: Webhook
+  url: https://discordapp.com/api/webhooks/680466516277199018/mLN1ZLstFHNXkNdQAC8wSWw-Mmdp__LIGlbaQuTR_4m67IhkZyiSrVTFImMSEpH4fbD2
+  method: POST
+  content_type: application/json
+  body: >-
+    {
+      "embeds": [
+        {
+          "title": "Build {{buildId}}",
+          "url": "{{buildUrl}}",
+          "color": {{#passed}}40973{{/passed}}{{^passed}}11672839{{/passed}},
+          "footer": {
+            "icon_url": "{{#passed}}https://i.imgur.com/Rf4g8v6.png{{/passed}}{{^passed}}https://i.imgur.com/QaERwAW.png{{/passed}}",
+            "text": "{{#passed}}Success{{/passed}}{{^passed}}Failure{{/passed}}"
+          },
+          "author": {
+            "name": "{{commitAuthor}}",
+            "url": "https://github.com/{{repositoryName}}/commit/{{commitId}}"
+          },
+          "fields": [
+            {
+              "name": "Commit",
+              "value": "[{{commitMessage}}](https://github.com/{{repositoryName}}/commit/{{commitId}})"
+            },
+            {
+              "name": "Duration",
+              "value": "{{duration}}",
+              "inline": true
+            },
+            {
+              "name": "Build version",
+              "value": "{{buildVersion}}",
+              "inline": true
+            }
+          ]
+        }
+      ]
+    }
+  on_build_success: true
+  on_build_failure: true
+  on_build_status_changed: true
