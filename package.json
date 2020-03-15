@@ -35,12 +35,12 @@
       "publish": "github"
     },
     "mac": {
-      "publish": "github",
-        "dmg": {
-          "window": {
-          "x": "540",
-          "y": "380"
-        }
+      "publish": "github"
+    },
+    "dmg": {
+      "window": {
+      "x": "540",
+      "y": "380"
       }
     }
   }
