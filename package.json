@@ -33,6 +33,13 @@
     "asar": "false",
     "win": {
       "publish": "github"
+    },
+    "mac": {
+      "publish": "github",
+      "window": {
+        "x": "540",
+        "y": "380"
+      }
     }
   }
 }
