@@ -16,7 +16,7 @@ artifacts:
 deploy: off
 notifications:
 - provider: Webhook
-  url: https://discordapp.com/api/webhooks/680466516277199018/mLN1ZLstFHNXkNdQAC8wSWw-Mmdp__LIGlbaQuTR_4m67IhkZyiSrVTFImMSEpH4fbD2
+  url: frick off ur not getting my webhook url LOL
   method: POST
   content_type: application/json
   body: >-
