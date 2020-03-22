@@ -40,14 +40,13 @@ Contributions through PRs, issues, and feature requests are welcome!<br />Feel f
 
 Give a ⭐️ if this project helped you!
 
+<!--
 <a href="https://www.patreon.com/daniel11420">
   <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
 </a>
+-->
 
 ## 📝 License
 
 Copyright © 2020 [daniel11420/The CPBack Development Team](https://github.com/daniel11420).<br />
-This project is [BSD 2--Clause](https://github.com/cpback/desktop/blob/master/LICENSE) licensed.
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+This project is [BSD 2-Clause](https://github.com/cpback/desktop/blob/master/LICENSE) licensed.
