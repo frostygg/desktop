@@ -1,52 +1,49 @@
-<h1 align="center">Welcome to CPBack Desktop 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0--rc.1-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/cpback/desktop/blob/master/LICENSE" target="_blank">
-    <img alt="License: BSD 2--Clause" src="https://img.shields.io/badge/License-BSD 2--Clause-yellow.svg" />
-  </a>
-</p>
+<h1 align="center">
+CPBack Desktop
+</h1>
 
-> Desktop client for cpback.net
+> Desktop client for CPBack.net
 
-### 🏠 [Homepage](https://cpback.net)
+[![Twitter Follow](https://img.shields.io/twitter/follow/CPenguinBack?style=social)](https://twitter.com/cpenguinback) [![GitHub stars](https://img.shields.io/github/stars/cpback/desktop?style=social)](https://github.com/cpback/desktop/stargazers) [![GitHub watchers](https://img.shields.io/github/watchers/cpback/desktop?style=social)](https://github.com/cpback/desktop/watchers)
+![AppVeyor](https://img.shields.io/appveyor/build/daniel11420/backdesktop?style=for-the-badge) ![Discord](https://img.shields.io/discord/655572764358606898?style=for-the-badge) ![GitHub repo size](https://img.shields.io/github/repo-size/cpback/desktop?style=for-the-badge) ![GitHub All Releases](https://img.shields.io/github/downloads/cpback/desktop/total?style=for-the-badge) ![GitHub Releases](https://img.shields.io/github/downloads/cpback/desktop/latest/total?style=for-the-badge) ![GitHub issues](https://img.shields.io/github/issues/cpback/desktop?style=for-the-badge) ![GitHub](https://img.shields.io/github/license/cpback/desktop?style=for-the-badge) ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/cpback/desktop?style=for-the-badge) ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/cpback/desktop?style=for-the-badge)
+[![forthebadge](https://forthebadge.com/images/badges/gluten-free.svg)](https://forthebadge.com)  [![forthebadge](https://forthebadge.com/images/badges/uses-badges.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/as-seen-on-tv.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/compatibility-club-penguin.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/mom-made-pizza-rolls.svg)](https://forthebadge.com)
 
-## Install
+## 📸 Screenshots
+![](https://image-host.club/0E4sPQdV.png)
+![](https://image-host.club/bsLT9254.png)
 
+## 🚀 Usage
+### For Users or Testers
+Just go to the [releases page](https://github.com/cpback/game/releases) and download the exe or dmg for the latest release (depending if you're on Windows or Mac).
+Windows builds only support x64 systems.
+
+If you're testing, you might want a build of the latest commit. AppVeyor automatically builds each commit, and you can get those builds [here](https://ci.appveyor.com/project/daniel11420/backdesktop/build/artifacts).
+
+### For Developers
+You need [node.js](https://nodejs.org). The latest version is recommended but others work too.
+
+Installation: 
 ```sh
-npm install
+git clone https://github.com/cpback/desktop
+cd desktop
+npm i
+npm start
 ```
-
-## Usage
-
+Building:
 ```sh
-npm run start
-
 npm run build
 npm run build-mac
 ```
-
-## Author
-
-👤 **daniel11420/The CPBack Development Team**
-
-* Website: https://cpback.net
-* Github: [@cpback](https://github.com/cpback)
-
 ## 🤝 Contributing
 
-Contributions through PRs, issues, and feature requests are welcome!<br />Feel free to check the [issues page](https://github.com/cpback/desktop/issues). 
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-<!--
-<a href="https://www.patreon.com/daniel11420">
-  <img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
-</a>
--->
+If you want to contribute by coding, you can fix issues or add new features and make a Pull Request.
+Bug reports and feature requests are also welcome.
+[Issues page](https://github.com/cpback/desktop/issues)
 
 ## 📝 License
 
-Copyright © 2020 [daniel11420/The CPBack Development Team](https://github.com/daniel11420).<br />
-This project is [BSD 2-Clause](https://github.com/cpback/desktop/blob/master/LICENSE) licensed.
+Copyright © 2019 daniel11420 / The CPBack Development Team
+This project is under the [BSD 2-Clause license](https://github.com/cpback/desktop/blob/master/LICENSE).
+
+---
+Readme written by Daniel, but I took the basic structure of it from [readme-md-generator](https://github.com/kefranabg/readme-md-generator).
