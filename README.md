@@ -6,3 +6,6 @@ Either get the EXE file from [Releases](https://github.com/cpback/desktop/releas
 
 # Development instructions
 `git clone` the repo into a folder, navigate into it and run `npm install`. To run the client, run `npm start`. (this requires nodejs and NPM). To build, run `npm run-script build` or `npm run-script build-mac`. (the latter requires you to be on a mac).
+
+# Contributing
+Make a pull request. If I don't see it, DM me on Discord. (daniel11420#0069)
