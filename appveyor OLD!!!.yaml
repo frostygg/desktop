@@ -12,7 +12,7 @@ build_script:
     npm run-script appveyor-build
 artifacts:
 - path: dist\*.exe
-  name: CPBack Desktop Windows
+  name: Frosty Desktop Windows
 deploy: off
 notifications:
 - provider: Webhook

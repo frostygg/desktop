@@ -33,7 +33,7 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: 1280,
     height: 720,
-    title: "CPBack is loading...",
+    title: "Frosty is loading...",
     icon: __dirname + '/favicon.ico',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
@@ -43,18 +43,18 @@ function createWindow () {
 
   mainWindow.setMenu(null);
   clearCache();
-  mainWindow.loadURL('http://play.cpback.net/desktop_game.html');
+  mainWindow.loadURL('http://play.frosty.gg/desktop_game.html');
 
   // RICH PRESENCE START
   const clientId = '668459813264424961'; DiscordRPC.register(clientId); const rpc = new DiscordRPC.Client({ transport: 'ipc' }); const startTimestamp = new Date();
   rpc.on('ready', () => {
     rpc.setActivity({
-      details: `cpback.net`, 
-      state: `Desktop Client`, 
-      startTimestamp, 
-      largeImageKey: `favicon_512`//, 
-      //largeImageText: "LARGE IMAGE TEXT", 
-      //smallImageKey: "favicon_512", 
+      details: `frosty.gg`, 
+      state: `Desktop Client`,
+      startTimestamp,
+      largeImageKey: `favicon_512`//,
+      //largeImageText: "LARGE IMAGE TEXT",
+      //smallImageKey: "favicon_512",
       //smallImageText: "SMALL IMAGE TEXT"
     });
   });
