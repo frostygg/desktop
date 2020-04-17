@@ -1,7 +1,7 @@
 {
-  "name": "backdesktop",
-  "version": "1.0.0-rc.1",
-  "description": "Desktop client for cpback.net",
+  "name": "frostydesktop",
+  "version": "1.0.0-rc.2",
+  "description": "Desktop client for frosty.gg",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
@@ -11,11 +11,11 @@
     "appveyor-build-mac": "electron-builder build --mac --publish onTagOrDraft"
   },
   "bugs": {
-    "url": "https://github.com/cpback/desktop/issues"
+    "url": "https://github.com/frostygg/desktop/issues"
   },
-  "homepage": "https://github.com/cpback/desktop#readme",
-  "repository": "https://github.com/cpback/desktop",
-  "author": "daniel11420/The CPBack Development Team",
+  "homepage": "https://github.com/frostygg/desktop#readme",
+  "repository": "https://github.com/frostygg/desktop",
+  "author": "daniel11420/The Frosty Development Team",
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^8.1.1",
@@ -25,11 +25,11 @@
     "discord-rpc": "^3.1.0",
     "electron-is-dev": "^1.1.0",
     "electron-updater": "^4.2.0",
-    "minimist": ">=1.2.2"
+    "minimist": ">=1.2.3"
   },
   "build": {
-    "appId": "com.cpback.desktop",
-    "productName": "CPBack Desktop",
+    "appId": "com.frostygg.desktop",
+    "productName": "Frosty Desktop",
     "asar": "false",
     "win": {
       "publish": "github"

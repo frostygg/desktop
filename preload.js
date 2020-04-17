@@ -12,8 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 */
 
-function redirect(){window.location.href = 'http://play.cpback.net/desktop_game.html';}
+function redirect(){window.location.href = 'http://play.frosty.gg/desktop_game.html';}
 window.addEventListener('DOMContentLoaded', () => {
   var url = window.location.href;
-    if(url.includes('play.cpback.net') === false){redirect();}
+    if(url.includes('play.frosty.gg') === false){redirect();}
   });
