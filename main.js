@@ -26,7 +26,7 @@ autoUpdater.checkForUpdatesAndNotify();
 let mainWindow;
 
 function clearCache() {
-  if (mainWindow != null) { mainWindow.webContents.session.clearCache() };
+  if (mainWindow != null) {mainWindow.webContents.session.clearCache()};
 }
 
 function createWindow () {
