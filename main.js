@@ -16,7 +16,7 @@ switch (process.platform) {
     break
   case 'linux':
     pluginName = 'flash/libpepflashplayer.so';
-    break
+    break;
 }
 app.commandLine.appendSwitch('ppapi-flash-path', path.join(__dirname, pluginName));
 
@@ -26,14 +26,14 @@ autoUpdater.checkForUpdatesAndNotify();
 let mainWindow;
 
 function clearCache() {
-  if (mainWindow != null) {mainWindow.webContents.session.clearCache()};
+  if (mainWindow !== null) {mainWindow.webContents.session.clearCache();}
 }
 
 function createWindow () {
   mainWindow = new BrowserWindow({
     width: 1280,
     height: 720,
-    title: "Frosty is loading...",
+    title: 'Frosty is loading...',
     icon: __dirname + '/favicon.ico',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
@@ -49,10 +49,10 @@ function createWindow () {
   const clientId = '668459813264424961'; DiscordRPC.register(clientId); const rpc = new DiscordRPC.Client({ transport: 'ipc' }); const startTimestamp = new Date();
   rpc.on('ready', () => {
     rpc.setActivity({
-      details: `frosty.gg`, 
-      state: `Desktop Client`,
+      details: 'frosty.gg', 
+      state: 'Desktop Client',
       startTimestamp,
-      largeImageKey: `favicon_512`//,
+      largeImageKey: 'favicon_512'//,
       //largeImageText: "LARGE IMAGE TEXT",
       //smallImageKey: "favicon_512",
       //smallImageText: "SMALL IMAGE TEXT"
@@ -63,7 +63,7 @@ function createWindow () {
   //mainWindow.webContents.openDevTools();
 
   mainWindow.on('closed', function () {
-    mainWindow = null
+    mainWindow = null;
   });
 }
 
@@ -72,13 +72,13 @@ app.on('ready', createWindow);
 app.on('window-all-closed', function () {
   // On macOS it is common for applications and their menu bar
   // to stay active until the user quits explicitly with Cmd + Q
-  if (process.platform !== 'darwin') app.quit();
+  if (process.platform !== 'darwin') {app.quit();}
 });
 
 app.on('activate', function () {
   // On macOS it's common to re-create a window in the app when the
   // dock icon is clicked and there are no other windows open.
-  if (mainWindow === null) createWindow();
+  if (mainWindow === null) {createWindow();}
 });
 
 
