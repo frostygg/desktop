@@ -10,10 +10,10 @@ let pluginName;
 switch (process.platform) {
   case 'win32':
     pluginName = 'flash/pepflashplayer64_32_0_0_303.dll';
-    break
+    break;
   case 'darwin':
     pluginName = 'flash/PepperFlashPlayer.plugin';
-    break
+    break;
   case 'linux':
     pluginName = 'flash/libpepflashplayer.so';
     break;
