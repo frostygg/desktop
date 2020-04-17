@@ -1,21 +1,21 @@
 const {app, BrowserWindow, dialog} = require('electron');
 const isDev = require('electron-is-dev');
-const { autoUpdater } = require("electron-updater");
+const { autoUpdater } = require('electron-updater');
 const DiscordRPC = require('discord-rpc');
 
 //const {app, BrowserWindow} = require('electron');
 const path = require('path');
 
-let pluginName
+let pluginName;
 switch (process.platform) {
   case 'win32':
-    pluginName = 'flash/pepflashplayer64_32_0_0_303.dll'
+    pluginName = 'flash/pepflashplayer64_32_0_0_303.dll';
     break
   case 'darwin':
-    pluginName = 'flash/PepperFlashPlayer.plugin'
+    pluginName = 'flash/PepperFlashPlayer.plugin';
     break
   case 'linux':
-    pluginName = 'flash/libpepflashplayer.so'
+    pluginName = 'flash/libpepflashplayer.so';
     break
 }
 app.commandLine.appendSwitch('ppapi-flash-path', path.join(__dirname, pluginName));
@@ -26,7 +26,7 @@ autoUpdater.checkForUpdatesAndNotify();
 let mainWindow;
 
 function clearCache() {
-  if (mainWindow != null) mainWindow.webContents.session.clearCache();
+  if (mainWindow != null) { mainWindow.webContents.session.clearCache() };
 }
 
 function createWindow () {
