@@ -34,7 +34,7 @@ function createWindow () {
     width: 1280,
     height: 720,
     title: 'Frosty is loading...',
-    icon: __dirname + '/favicon.ico',
+    icon: __dirname + '/build/icon.png',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       plugins: true
@@ -46,13 +46,13 @@ function createWindow () {
   mainWindow.loadURL('https://play.frosty.gg/desktop_re.html');
 
   // RICH PRESENCE START
-  const clientId = '668459813264424961'; DiscordRPC.register(clientId); const rpc = new DiscordRPC.Client({ transport: 'ipc' }); const startTimestamp = new Date();
+  const clientId = '709609611342381056'; DiscordRPC.register(clientId); const rpc = new DiscordRPC.Client({ transport: 'ipc' }); const startTimestamp = new Date();
   rpc.on('ready', () => {
     rpc.setActivity({
       details: 'frosty.gg', 
       state: 'Desktop Client',
       startTimestamp,
-      largeImageKey: 'favicon_512'//,
+      largeImageKey: 'frosty-logo'//,
       //largeImageText: "LARGE IMAGE TEXT",
       //smallImageKey: "favicon_512",
       //smallImageText: "SMALL IMAGE TEXT"
@@ -75,11 +75,18 @@ function createWindow () {
     }
   }));
   fsmenu.append(new MenuItem({
-    label: 'Fullscreen',
+    label: 'Fullscreen (Toggle)',
     accelerator: 'CmdOrCtrl+F',
     click: () => { 
       let fsbool = (mainWindow.isFullScreen() ? false : true);
       mainWindow.setFullScreen(fsbool);
+    }
+  }));
+  fsmenu.append(new MenuItem({
+    label: 'Mute Audio (Toggle)',
+    click: () => { 
+      let ambool = (mainWindow.webContents.audioMuted ? false : true);
+      mainWindow.webContents.audioMuted = ambool;
     }
   }));
   fsmenu.append(new MenuItem({
