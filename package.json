@@ -1,6 +1,6 @@
 {
   "name": "frostydesktop",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0",
   "description": "Desktop client for frosty.gg",
   "main": "main.js",
   "scripts": {
