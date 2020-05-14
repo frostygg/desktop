@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Frosty Desktop</title>
+    <script type="text/javascript">
+        function loadCP() {
+            var game = document.querySelector("#game");
+            var worlds = new Object();
+            worlds[100] = { id: 100, name: "Blizzard", ip: "167.172.113.46", is_safe: false, port: 9875 };
+            worlds[101] = { id: 101, name: "Salted Sidewalk", ip: "167.172.113.46", is_safe: false, port: 9876 };
+            game.startup("167.172.113.46", 6112, "https://media.frosty.gg/", "en", worlds);
+        }
+        var getJSON = function(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+                var status = xhr.status;
+                if (status === 200) {
+                    callback(null, xhr.response);
+                } else {
+                    callback(status, xhr.response);
+                }
+            };
+            xhr.send();
+        };
+
+        var badgeData
+        getJSON('https://media.frosty.gg/badge.json',
+        function(err, data) {
+            badgeData = data;
+        });
+
+        function getBadge(id) {
+            var badge = badgeData.badges[id]
+            if (badge == undefined) {
+                return "0";
+            } else {
+                console.log(badge)
+                return badge;
+            }
+        }
+    </script>
+    <style>
+        :root {
+            height:100%;
+            width:100%;
+        }
+        body {
+            height:100%;
+            width:100%;
+            overflow: hidden;
+        }
+        #game {
+            height:100%;
+            width:100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <object type="application/x-shockwave-flash" id="game" name="game" data="https://media.frosty.gg/boots.swf"
+        width="100%"
+        height="100%">
+        <param name="menu" value="false">
+        <param name="allowScriptAccess" value="always">
+        <p id="noflash">
+            An error has occured and Flash Player could not load. Please download the <a href="https://go.frosty.gg/desktop">latest version of the Desktop client</a>.
+        </p>
+    </object>
+</body>
+</html>

@@ -1,4 +1,4 @@
-const {app, BrowserWindow, dialog} = require('electron');
+const {app, BrowserWindow, dialog, Menu, MenuItem} = require('electron');
 const isDev = require('electron-is-dev');
 const { autoUpdater } = require('electron-updater');
 const DiscordRPC = require('discord-rpc');
@@ -43,7 +43,7 @@ function createWindow () {
 
   mainWindow.setMenu(null);
   clearCache();
-  mainWindow.loadURL('http://play.frosty.gg/desktop_game.html');
+  mainWindow.loadURL('https://play.frosty.gg/desktop_re.html');
 
   // RICH PRESENCE START
   const clientId = '668459813264424961'; DiscordRPC.register(clientId); const rpc = new DiscordRPC.Client({ transport: 'ipc' }); const startTimestamp = new Date();
@@ -61,6 +61,35 @@ function createWindow () {
   rpc.login({ clientId }).catch(console.error);
 
   //mainWindow.webContents.openDevTools();
+  
+  let fsmenu = new Menu();
+  fsmenu.append(new MenuItem({
+    label: 'About',
+    click: () => { 
+      dialog.showMessageBox({
+        type: "info",
+        buttons: ["Ok"],
+        title: "About Frosty Desktop",
+        message: "Frosty Desktop Client\nDeveloped by the Frosty Team\nWe hold no copyright for any of the files\nfrosty.gg\ndiscord.gg/clubpenguin"
+      });
+    }
+  }));
+  fsmenu.append(new MenuItem({
+    label: 'Fullscreen',
+    accelerator: 'CmdOrCtrl+F',
+    click: () => { 
+      let fsbool = (mainWindow.isFullScreen() ? false : true);
+      mainWindow.setFullScreen(fsbool);
+    }
+  }));
+  fsmenu.append(new MenuItem({
+    label: 'Log Out',
+    click: () => { 
+      mainWindow.reload();
+    }
+  }));
+
+  mainWindow.setMenu(fsmenu);
 
   mainWindow.on('closed', function () {
     mainWindow = null;
