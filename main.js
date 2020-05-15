@@ -70,7 +70,7 @@ function createWindow () {
         type: "info",
         buttons: ["Ok"],
         title: "About Frosty Desktop",
-        message: "Frosty Desktop Client\nDeveloped by the Frosty Team\nWe hold no copyright for any of the files\nfrosty.gg\ndiscord.gg/clubpenguin"
+        message: "Frosty Desktop Client\nCopyright © 2020 daniel11420 / the Frosty Team\nWe hold no copyright for any of the ingame files\nfrosty.gg\ndiscord.gg/penguins"
       });
     }
   }));
