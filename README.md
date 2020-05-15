@@ -42,7 +42,7 @@ Bug reports and feature requests are also welcome.
 
 ## 📝 License
 
-Copyright © 2020 daniel11420 / The Frosty Development Team
+Copyright © 2020 daniel11420 / the Frosty Team
 This project is under the [BSD 2-Clause license](https://github.com/frostygg/desktop/blob/master/LICENSE).
 
 ---
