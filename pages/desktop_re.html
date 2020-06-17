@@ -4,13 +4,6 @@
     <meta charset="UTF-8">
     <title>Frosty Desktop</title>
     <script type="text/javascript">
-        function loadCP() {
-            var game = document.querySelector("#game");
-            var worlds = new Object();
-            worlds[100] = { id: 100, name: "Blizzard", ip: "167.172.113.46", is_safe: false, port: 9875 };
-            worlds[101] = { id: 101, name: "Salted Sidewalk", ip: "167.172.113.46", is_safe: false, port: 9876 };
-            game.startup("167.172.113.46", 6112, "https://media.frosty.gg/", "en", worlds);
-        }
         var getJSON = function(url, callback) {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', url, true);
@@ -27,7 +20,7 @@
         };
 
         var badgeData
-        getJSON('https://media.frosty.gg/badge.json',
+        getJSON('https://media.frosty.gg/noflash/badge.json',
         function(err, data) {
             badgeData = data;
         });
@@ -67,6 +60,7 @@
         height="100%">
         <param name="menu" value="false">
         <param name="allowScriptAccess" value="always">
+        <param name="flashvars" value="lang=en">
         <p id="noflash">
             An error has occured and Flash Player could not load. Please download the <a href="https://go.frosty.gg/desktop">latest version of the Desktop client</a>.
         </p>
