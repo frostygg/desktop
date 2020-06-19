@@ -97,6 +97,7 @@ function createWindow () {
   }));
 
   mainWindow.setMenu(fsmenu);
+  Menu.setApplicationMenu(fsmenu);
 
   mainWindow.on('closed', function () {
     mainWindow = null;
