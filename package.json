@@ -5,10 +5,8 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder build --win --publish never",
-    "build-mac": "electron-builder build --mac --publish never",
-    "appveyor-build": "electron-builder build --win --publish onTagOrDraft",
-    "appveyor-build-mac": "electron-builder build --mac --publish onTagOrDraft"
+    "make-win": "electron-builder build --win --publish never",
+    "make-mac": "electron-builder build --mac --publish never"
   },
   "bugs": {
     "url": "https://github.com/frostygg/desktop/issues"
