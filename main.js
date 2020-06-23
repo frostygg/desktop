@@ -105,6 +105,7 @@ function createWindow () {
 }
 
 app.on('ready', function () {
+  makeMenu();
   Menu.setApplicationMenu(fsmenu);
   createWindow();
 });
