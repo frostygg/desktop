@@ -24,6 +24,43 @@ app.commandLine.appendSwitch('ppapi-flash-path', path.join(__dirname, pluginName
 // be closed automatically when the JavaScript object is garbage collected.
 autoUpdater.checkForUpdatesAndNotify();
 let mainWindow;
+let fsmenu;
+
+function makeMenu() {
+  fsmenu = new Menu();
+  fsmenu.append(new MenuItem({
+    label: 'About',
+    click: () => { 
+      dialog.showMessageBox({
+        type: "info",
+        buttons: ["Ok"],
+        title: "About Frosty Desktop",
+        message: "Frosty Desktop Client\nCopyright © 2020 daniel11420 / the Frosty Team\nWe hold no copyright for any of the ingame files\nfrosty.gg\ndiscord.gg/penguins"
+      });
+    }
+  }));
+  fsmenu.append(new MenuItem({
+    label: 'Fullscreen (Toggle)',
+    accelerator: 'CmdOrCtrl+F',
+    click: () => { 
+      let fsbool = (mainWindow.isFullScreen() ? false : true);
+      mainWindow.setFullScreen(fsbool);
+    }
+  }));
+  fsmenu.append(new MenuItem({
+    label: 'Mute Audio (Toggle)',
+    click: () => { 
+      let ambool = (mainWindow.webContents.audioMuted ? false : true);
+      mainWindow.webContents.audioMuted = ambool;
+    }
+  }));
+  fsmenu.append(new MenuItem({
+    label: 'Log Out',
+    click: () => { 
+      mainWindow.reload();
+    }
+  }));
+}
 
 function clearCache() {
   if (mainWindow !== null) {mainWindow.webContents.session.clearCache();}
@@ -61,50 +98,16 @@ function createWindow () {
   rpc.login({ clientId }).catch(console.error);
 
   //mainWindow.webContents.openDevTools();
-  
-  let fsmenu = new Menu();
-  fsmenu.append(new MenuItem({
-    label: 'About',
-    click: () => { 
-      dialog.showMessageBox({
-        type: "info",
-        buttons: ["Ok"],
-        title: "About Frosty Desktop",
-        message: "Frosty Desktop Client\nCopyright © 2020 daniel11420 / the Frosty Team\nWe hold no copyright for any of the ingame files\nfrosty.gg\ndiscord.gg/penguins"
-      });
-    }
-  }));
-  fsmenu.append(new MenuItem({
-    label: 'Fullscreen (Toggle)',
-    accelerator: 'CmdOrCtrl+F',
-    click: () => { 
-      let fsbool = (mainWindow.isFullScreen() ? false : true);
-      mainWindow.setFullScreen(fsbool);
-    }
-  }));
-  fsmenu.append(new MenuItem({
-    label: 'Mute Audio (Toggle)',
-    click: () => { 
-      let ambool = (mainWindow.webContents.audioMuted ? false : true);
-      mainWindow.webContents.audioMuted = ambool;
-    }
-  }));
-  fsmenu.append(new MenuItem({
-    label: 'Log Out',
-    click: () => { 
-      mainWindow.reload();
-    }
-  }));
-
-  mainWindow.setMenu(fsmenu);
-  Menu.setApplicationMenu(fsmenu);
 
   mainWindow.on('closed', function () {
     mainWindow = null;
   });
 }
 
-app.on('ready', createWindow);
+app.on('ready', function () {
+  Menu.setApplicationMenu(fsmenu);
+  createWindow();
+});
 
 app.on('window-all-closed', function () {
   // On macOS it is common for applications and their menu bar
