@@ -31,14 +31,15 @@ npm start
 ```
 Building:
 ```sh
-npm run build
-npm run build-mac
+npm run make-win
+npm run make-mac
 ```
 ## 🤝 Contributing
 
 If you want to contribute by coding, you can fix issues or add new features and make a Pull Request.
 Bug reports and feature requests are also welcome.
-[Issues page](https://github.com/frostygg/desktop/issues)
+
+[Issues page](https://github.com/frostygg/desktop/issues).
 
 ## 📝 License
 
