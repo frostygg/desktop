@@ -68,8 +68,8 @@ function clearCache() {
 
 function createWindow () {
   mainWindow = new BrowserWindow({
-    width: 1280,
-    height: 720,
+    width: 1225,
+    height: 823,
     title: 'Frosty is loading...',
     icon: __dirname + '/build/icon.png',
     webPreferences: {
