@@ -6,6 +6,20 @@ const DiscordRPC = require('discord-rpc');
 //const {app, BrowserWindow} = require('electron');
 const path = require('path');
 
+const gotTheLock = app.requestSingleInstanceLock()
+
+if (!gotTheLock) {
+  app.quit()
+} else {
+  app.on('second-instance', (event, commandLine, workingDirectory) => {
+    // Someone tried to run a second instance, we should focus our window.
+    if (mainWindow) {
+      if (mainWindow.isMinimized()) mainWindow.restore();
+      mainWindow.focus();
+    }
+  });
+}
+
 let pluginName;
 switch (process.platform) {
   case 'win32':
