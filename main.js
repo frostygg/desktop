@@ -2,6 +2,7 @@ const {app, BrowserWindow, dialog, Menu, MenuItem} = require('electron');
 const isDev = require('electron-is-dev');
 const { autoUpdater } = require('electron-updater');
 const DiscordRPC = require('discord-rpc');
+const fs = require('fs');
 
 //const {app, BrowserWindow} = require('electron');
 const path = require('path');
@@ -49,7 +50,7 @@ function makeMenu() {
         type: "info",
         buttons: ["Ok"],
         title: "About Frosty Desktop",
-        message: "Frosty Desktop Client\nCopyright © 2020 daniel11420 / the Frosty Team\nWe hold no copyright for any of the ingame files\nfrosty.gg\ndiscord.gg/penguins"
+        message: "Frosty Desktop Client\nCopyright © 2020 daniel11420 / the Frosty Team\nWe hold no copyright for any of the ingame files\nfrosty.gg\ndiscord.me/penguin\nLicense:\n" + fs.readFileSync('LICENSE')
       });
     }
   }));
