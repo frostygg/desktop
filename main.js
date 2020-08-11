@@ -50,7 +50,7 @@ function makeMenu() {
         type: "info",
         buttons: ["Ok"],
         title: "About Frosty Desktop",
-        message: "Frosty Desktop Client\nCopyright © 2020 daniel11420 / the Frosty Team\nWe hold no copyright for any of the ingame files\nfrosty.gg\ndiscord.me/penguin\nLicense:\n" + fs.readFileSync('LICENSE')
+        message: "Frosty Desktop Client\nCopyright © 2020 daniel11420 / the Frosty Team\nWe hold no copyright for any of the ingame files\nfrosty.gg\ndiscord.me/penguin\nLicense:\n" + fs.readFileSync('resources/app/LICENSE')
       });
     }
   }));
