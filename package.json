@@ -18,7 +18,7 @@
   "author": "daniel11420/The Frosty Development Team",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "electron": "^8.2.4",
+    "electron": "^8.5.1",
     "electron-builder": "^22.7.0"
   },
   "dependencies": {
