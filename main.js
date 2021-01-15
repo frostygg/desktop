@@ -1,4 +1,4 @@
-const {app, BrowserWindow, dialog, Menu, MenuItem} = require('electron');
+const {app, BrowserWindow, dialog, Menu, MenuItem, shell} = require('electron');
 const isDev = require('electron-is-dev');
 const { autoUpdater } = require('electron-updater');
 const DiscordRPC = require('discord-rpc');
@@ -104,6 +104,13 @@ function clearCache() {
   if (mainWindow !== null) {mainWindow.webContents.session.clearCache();}
 }
 
+function handleRedirect(event, url) {
+  if (!url.includes("frosty.gg")) {
+    event.preventDefault();
+    shell.openExternal(url);
+  }
+}
+
 function createWindow () {
   mainWindow = new BrowserWindow({
     width: 1513,
@@ -119,6 +126,9 @@ function createWindow () {
   mainWindow.setMenu(null);
   clearCache();
   mainWindow.loadURL('https://play.frosty.gg/desktop_re.html');
+
+  mainWindow.webContents.on('will-navigate', handleRedirect);
+  mainWindow.webContents.on('new-window', handleRedirect);
 
   // RICH PRESENCE START
   const clientId = '709609611342381056'; DiscordRPC.register(clientId); const rpc = new DiscordRPC.Client({ transport: 'ipc' }); const startTimestamp = new Date();
