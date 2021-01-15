@@ -6,7 +6,6 @@ const fs = require('fs');
 
 //const {app, BrowserWindow} = require('electron');
 const path = require('path');
-
 const gotTheLock = app.requestSingleInstanceLock()
 
 if (!gotTheLock) {
@@ -35,11 +34,30 @@ switch (process.platform) {
 }
 app.commandLine.appendSwitch('ppapi-flash-path', path.join(__dirname, pluginName));
 
+let playPages = [
+  ["Main (Side Ads)", "https://play.frosty.gg/desktop_re.html"], 
+  ["Main (Top Ad)", "https://play.frosty.gg/desktop_re_topad.html"], 
+  ["Army", "https://play.frosty.gg/army1/desktop_army.html"]
+]
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 autoUpdater.checkForUpdatesAndNotify();
 let mainWindow;
 let fsmenu;
+
+function makeLayoutSwitcher() {
+  LayoutSwitcher = new Menu();
+  playPages.forEach((playPage, index) => {
+    LayoutSwitcher.append(new MenuItem({
+      label: playPage[0],
+      click: () => {
+        mainWindow.loadURL(playPage[1]);
+      }
+    }));
+  });
+  return LayoutSwitcher;
+}
 
 function makeMenu() {
   fsmenu = new Menu();
@@ -70,6 +88,11 @@ function makeMenu() {
     }
   }));
   fsmenu.append(new MenuItem({
+    label: 'Layout switcher',
+    type: 'submenu',
+    submenu: makeLayoutSwitcher()
+  }));
+  fsmenu.append(new MenuItem({
     label: 'Log Out',
     click: () => { 
       mainWindow.reload();
@@ -83,7 +106,7 @@ function clearCache() {
 
 function createWindow () {
   mainWindow = new BrowserWindow({
-    width: 1225,
+    width: 1513,
     height: 823,
     title: 'Frosty is loading...',
     icon: __dirname + '/build/icon.png',

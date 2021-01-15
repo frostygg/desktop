@@ -15,5 +15,5 @@ window.addEventListener('DOMContentLoaded', () => {
 function redirect() {window.location.href = 'http://play.frosty.gg/desktop_re.html';}
 window.addEventListener('DOMContentLoaded', () => {
   var url = window.location.href;
-  if (url.includes('play.frosty.gg/desktop_re') === false) {redirect();}
+  if (url.includes('play.frosty.gg') === false) {redirect();}
 });
