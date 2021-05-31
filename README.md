@@ -14,7 +14,7 @@ Frosty Desktop
 
 ## 🚀 Usage
 ### For Users or Testers
-Just go to the [releases page](https://github.com/frostygg/desktop/releases) and download the exe or dmg for the latest release (depending if you're on Windows or Mac).
+Just go to the [releases page](https://github.com/frostygg/desktop/releases) and download the exe. dmg, or AppImage for the latest release (depending if you're on Windows, Mac, or Linux).
 Windows builds only support x64 systems.
 
 If you're testing, you might want a build of the latest commit. AppVeyor automatically builds each commit, and you can get those builds [here](https://ci.appveyor.com/project/daniel11420/backdesktop/build/artifacts).
@@ -33,6 +33,7 @@ Building:
 ```sh
 npm run make-win
 npm run make-mac
+npm run make-linux
 ```
 ## 🤝 Contributing
 
