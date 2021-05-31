@@ -7,8 +7,10 @@
     "start": "electron .",
     "make-win": "electron-builder build --win --publish never",
     "make-mac": "electron-builder build --mac --publish never",
+    "make-linux": "electron-builder build --linux --publish never",
     "make-win-publish": "electron-builder build --win --publish onTagOrDraft",
-    "make-mac-publish": "electron-builder build --mac --publish onTagOrDraft"
+    "make-mac-publish": "electron-builder build --mac --publish onTagOrDraft",
+    "make-linux-publish": "electron-builder build --linux --publish onTagOrDraft"
   },
   "bugs": {
     "url": "https://github.com/frostygg/desktop/issues"
