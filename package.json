@@ -28,7 +28,7 @@
     "electron-is-dev": "^1.1.0",
     "electron-updater": "^4.2.0",
     "fs": "0.0.1-security",
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.6"
   },
   "build": {
     "appId": "com.frostygg.desktop",
