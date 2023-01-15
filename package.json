@@ -20,8 +20,8 @@
   "author": "daniel11420/The Frosty Development Team",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "electron": "^8.5.2",
-    "electron-builder": "^22.7.0"
+    "electron": "^22.0.2",
+    "electron-builder": "^23.6.0"
   },
   "dependencies": {
     "discord-rpc": "^3.1.0",
